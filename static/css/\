@@ -1,0 +1,11 @@
+body{
+  padding-top: 50px;
+}
+
+table{
+  margin-top: 20px;
+}
+
+input{
+  margin-bottom: 20px;
+}

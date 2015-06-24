@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block css %}
+{% load staticfiles %}
+<link href="{% static "css/blog.css" %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="blog-post">
+    <h2 class="blog-post-title">{{ article.title }}</h2>
+    <p class="blog-post-meta">{{ article.date_time }}</p>
+    <p>{{ article.content|safe }}</p>
+  </div>
+</div>
+{% endblock %}

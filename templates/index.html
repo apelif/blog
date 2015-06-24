@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block css %}
+{% load staticfiles %}
+<link href="{% static "css/blog.css" %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="row">
+      {% for article in articles %}
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/article/{{ article.id }}">{{ article.title }}</a></h2>
+        <p class="blog-post-meta">{{ article.date_time }}</p>
+        {% if article.content|length > 20 %}
+        <p>{{ article.content|slice:"20" }}......</p>
+        {% else %}
+        <p>{{ article.content }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+{% endblock %}
