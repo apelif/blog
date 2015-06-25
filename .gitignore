@@ -3,3 +3,4 @@
 
 # My configurations:
 db.sqlite3
+*.pyc
