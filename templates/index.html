@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block css %}
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 <link href="{% static "css/blog.css" %}" rel="stylesheet">
 {% endblock %}
 {% block content %}
@@ -9,10 +10,10 @@
       <div class="blog-post">
         <h2 class="blog-post-title"><a href="/article/{{ article.id }}">{{ article.title }}</a></h2>
         <p class="blog-post-meta">{{ article.date_time }}</p>
-        {% if article.content|length > 20 %}
-        <p>{{ article.content|slice:"20" }}......</p>
+        {% if article.content|length > 50 %}
+        <p>{{ article.content|slice:"50"|markdown }}......</p>
         {% else %}
-        <p>{{ article.content }}</p>
+        <p>{{ article.content|markdown }}</p>
         {% endif %}
       </div>
       {% endfor %}

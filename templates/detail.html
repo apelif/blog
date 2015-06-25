@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block css %}
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 <link href="{% static "css/blog.css" %}" rel="stylesheet">
 {% endblock %}
 {% block content %}
@@ -8,7 +9,7 @@
   <div class="blog-post">
     <h2 class="blog-post-title">{{ article.title }}</h2>
     <p class="blog-post-meta">{{ article.date_time }}</p>
-    <p>{{ article.content|safe }}</p>
+    <p>{{ article.content|markdown }}</p>
   </div>
 </div>
 {% endblock %}
