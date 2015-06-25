@@ -1,0 +1,5 @@
+# Python
+*.py[cod]
+
+# My configurations:
+db.sqlite3
