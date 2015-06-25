@@ -91,5 +91,5 @@ TEMPLATE_DIRS = (
             os.path.join(os.path.dirname(__file__), '../templates/').replace('\\','/'),
             )
 # 设置session
-SESSION_COOKIE_AGE = 60*30
+SESSION_COOKIE_AGE = 60*60*2
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True

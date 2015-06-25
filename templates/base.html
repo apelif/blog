@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>blog</title>
+    <title>一个博客</title>
 
     <!-- Bootstrap -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
@@ -21,21 +21,18 @@
     <![endif]-->
   </head>
   <body>
-  <div class="blog-masthead">
+  {% block content %}
+  {% endblock %}
+  <footer class="footer">
     <div class="container">
-      <nav class="blog-nav">
-        <a class="blog-nav-item active" href="/">首页</a>
-        <a class="blog-nav-item" href="#">关于</a>
-      </nav>
+      <p class="text-muted"><a href='#'>Back to top</a></p>
     </div>
-  </div>
-  <div class="container">
-    {% block content %}
-    {% endblock %}
-  </div><!-- /.container -->
+  </footer>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="{% static "js/bootstrap.min.js" %}"></script>
+  {% block js %}
+  {% endblock %}
   </body>
 </html>
