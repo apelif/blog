@@ -91,8 +91,10 @@ def article_edit(request, id):
     return redirect('/admin/')
 
 def article_paginator(request, page_num):
+    """
+    文章分页器
+    """
     article_list = Article.objects.all()
-    # 分页
     paginator = Paginator(article_list, page_num)
     page = request.GET.get('page', 1)
     try:
