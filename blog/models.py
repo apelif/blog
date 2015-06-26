@@ -14,6 +14,7 @@ class Article(models.Model):
 class User(models.Model):
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
+    email = models.CharField(max_length=50)
     created_time = models.DateTimeField(auto_now_add=True)
     
     def __unicode__(self):
