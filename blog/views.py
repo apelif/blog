@@ -12,30 +12,26 @@ from django.core.paginator import EmptyPage
 from django.core.paginator import PageNotAnInteger
 
 def index(request):
-    """
-    首页
+    """首页
     """
     articles = article_paginator(request, 5)
     return render_to_response('index.html', {"articles": articles})
 
 def detail(request, id):
-    """
-    文章页
+    """文章页
     """
     article = Article.objects.get(id=str(id))
     return render_to_response('detail.html', {'article': article})
 
 def login(request):
-    """
-    登录页
+    """登录页
     """
     if request.session.get('username'):
         return redirect('/admin/')
     return render_to_response('login.html', RequestContext(request))
 
 def login_verify(request):
-    """
-    登录验证
+    """登录验证
     """
     articles = article_paginator(request, 10)
     if request.session.get('username'):
@@ -54,8 +50,7 @@ def login_verify(request):
 
 @login_required
 def article_del(request, id):
-    """
-    删除文章
+    """删除文章
     """
     article = Article.objects.get(id=str(id))
     article.delete()
@@ -63,8 +58,7 @@ def article_del(request, id):
 
 @login_required
 def article_new(request):
-    """
-    新建文章
+    """新建文章
     """
     title = request.GET.get('title', '')
     content = request.GET.get('content', '')
@@ -76,8 +70,7 @@ def article_new(request):
 
 @login_required
 def article_edit(request, id):
-    """
-    编辑文章
+    """编辑文章
     """
     article = Article.objects.filter(id=str(id))
     title = article.first().title
@@ -91,8 +84,7 @@ def article_edit(request, id):
     return redirect('/admin/')
 
 def article_paginator(request, page_num):
-    """
-    文章分页器
+    """文章分页器
     """
     article_list = Article.objects.all()
     paginator = Paginator(article_list, page_num)
