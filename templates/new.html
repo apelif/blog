@@ -24,8 +24,8 @@
 <div class="container blog-admin">
   <button type="button" class="btn" onclick="javascript:location.href='/admin/'">返回</button>
   <form>
-    <input type="text" name="title" class="form-control" placeholder="标题">
-    <textarea name="content" data-provide="markdown" rows="10"></textarea>
+    <input type="text" name="title" class="form-control" placeholder="标题" value="{{ title }}">
+    <textarea name="content" data-provide="markdown" rows="10">{{ content }}</textarea>
     <hr/>
     <button type="submit" class="btn btn-primary btn-lg">发布</button>
   </form> 

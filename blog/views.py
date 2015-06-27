@@ -63,7 +63,8 @@ def article_new(request):
     title = request.GET.get('title', '')
     content = request.GET.get('content', '')
     if not title or not content:
-        return render_to_response('new.html')
+        return render_to_response('new.html',
+                {'title': title, 'content': content})
     article = Article(title=title, content=content)
     article.save()
     return redirect('/admin/')
@@ -80,6 +81,14 @@ def article_edit(request, id):
     if not title_mod or not content_mod:
         return render_to_response('edit.html',
                 {'title': title, 'content': content})
+    if title == title_mod and content == content_mod:
+        return redirect('/admin/')
+    if title == title_mod:
+        article.update(content=content_mod)
+        return redirect('/admin/')
+    if content == content_mod:
+        article.update(title=title_mod)
+        return redirect('/admin/')
     article.update(title=title_mod, content=content_mod)
     return redirect('/admin/')
 
