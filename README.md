@@ -5,7 +5,7 @@
 
 用户名和密码都是admin
 
-Django + Bootstrap
+基于Django + Bootstrap
 
 依赖:
 
