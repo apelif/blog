@@ -10,5 +10,3 @@
 依赖:
 
     django-markdown-deux
-
-    bootstrap-markdown
