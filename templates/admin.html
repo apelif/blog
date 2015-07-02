@@ -44,24 +44,24 @@
         {% if articles.has_previous %}
         <li>
         <a href="?page={{ articles.previous_page_number }}">
-          {% else %}
-          <li class="disabled">
-          <a href="#">
-            {% endif %}
-            上一页
-          </a>
-          </li>
-          {% if articles.has_next %}
-          <li>
-          <a href="?page={{ articles.next_page_number }}">
-            {% else %}
-            <li class="disabled">
-            <a href="#">
-              {% endif %}
-              下一页
-            </a>
-            </li>
-          </ul>
+        {% else %}
+        <li class="disabled">
+        <a href="#">
+        {% endif %}
+        上一页
+        </a>
+        </li>
+        {% if articles.has_next %}
+        <li>
+        <a href="?page={{ articles.next_page_number }}">
+        {% else %}
+        <li class="disabled">
+        <a href="#">
+        {% endif %}
+        下一页
+        </a>
+        </li>
+        </ul>
         </nav>
   </div>
 {% endblock %}
